@@ -1,0 +1,15 @@
+.Card_Heading {
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.AllCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.SubCard{
+    padding: 15px 0px;
+}
