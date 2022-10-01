@@ -3,10 +3,12 @@ import './Header.css';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import Badge from '@mui/material/Badge';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Cart from '../Cart/Cart';
+import { isLogout } from '../../features/UserAuthReducer';
 
 const Header = () => {
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -21,18 +23,15 @@ const Header = () => {
   return (
     <>
       <div className='HeaderLeft'>
-        <ul>
-          <li>Add to Cart</li>
-          <li>Home</li>
-        </ul>
+        <div className='HeaderSubLeft'>Welcome</div>
         <div className='HeaderMiddle'>FoodCart</div>
         <ul>
-          <li>Profile</li>
           <li onClick={handleClick}>
             <Badge badgeContent={cartValue.length} color='primary'>
               <ShoppingCartIcon />
             </Badge>
           </li>
+          <li onClick={() => dispatch(isLogout())}>Logout</li>
         </ul>
       </div>
       <Menu

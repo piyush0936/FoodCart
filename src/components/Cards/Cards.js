@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Cardsdata from '../Cardsdata';
 import './Cards.css';
 import Card from '@mui/material/Card';
@@ -7,13 +7,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../features/CartReducer';
+import Header from '../Header/Header';
+import { useNavigate } from 'react-router-dom';
 
 const Cards = () => {
+  const navigate = useNavigate();
+  const isLoginSuccess = useSelector((state) => state.isLogin.isLoginSuccess);
+
+  useEffect(() => {
+    !isLoginSuccess && navigate('/');
+  }, [isLoginSuccess]);
+
   const dispatch = useDispatch();
   return (
     <>
+      <Header />
       <div className='Card_Heading'>
         <strong>Order Now 😋😋</strong>
       </div>

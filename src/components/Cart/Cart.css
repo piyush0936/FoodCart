@@ -1,3 +1,7 @@
-.tableHeading tr th{
-    font-size: 20px;
+.tableHeading tr th {
+  font-size: 20px;
+}
+
+.Pointer {
+  cursor: pointer;
 }

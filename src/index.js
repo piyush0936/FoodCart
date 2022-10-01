@@ -5,10 +5,12 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import CartReducer from './features/CartReducer';
+import UserAuthReducer from './features/UserAuthReducer';
 
 const store = configureStore({
   reducer: {
     initialCart: CartReducer,
+    isLogin: UserAuthReducer,
   },
 });
 

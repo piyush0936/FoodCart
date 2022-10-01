@@ -1,10 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import ClearIcon from '@mui/icons-material/Clear';
-import './Cart.css'
+import { useSelector, useDispatch } from 'react-redux';
+import DeleteIcon from '@mui/icons-material/Delete';
+import './Cart.css';
+import { removeItem } from '../../features/CartReducer';
 
 const Cart = () => {
   const cartValue = useSelector((item) => item.initialCart.value);
+
+  function totalAmount() {
+    let total = 0;
+    cartValue.forEach((item) => {
+      total += item.price * item.qnty;
+    });
+    return total;
+  }
+  const dispatch = useDispatch();
+
   return (
     <>
       <div>
@@ -19,17 +30,31 @@ const Cart = () => {
             {cartValue.map((item) => {
               return (
                 <>
-                  <tr>
-                    <td>
-                      <img src={item.imgdata} width='80px' height='60px' />
+                  <tr key={item.id}>
+                    <td className='Pointer'>
+                      <img
+                        src={item.imgdata}
+                        alt={item.rname}
+                        width='80px'
+                        height='60px'
+                      />
                     </td>
-                    <div style={{ display: 'flex', flexDirection: 'column',alignItems:'center' }}>
-                      <td>{item.rname}</td>
-                      <td>Price: {item.price}</td>
-                      <td>Quantity: {item.qnty}</td>
-                    </div>
-                    <td>
-                      <ClearIcon />
+                    <td
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <p>{item.rname}</p>
+                      <p>Price: {item.price}</p>
+                      <p>Quantity: {item.qnty}</p>
+                    </td>
+                    <td
+                      className='Pointer'
+                      onClick={() => dispatch(removeItem(item.id))}
+                    >
+                      <DeleteIcon sx={{ color: 'red' }} />
                     </td>
                   </tr>
                 </>
@@ -38,7 +63,7 @@ const Cart = () => {
           </tbody>
           <tfoot>
             <tr>
-              <td>Total :₹ 350</td>
+              <td>Total: ₹ {totalAmount()}</td>
             </tr>
           </tfoot>
         </table>
