@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import DeleteIcon from '@mui/icons-material/Delete';
 import './Cart.css';
 import { removeItem } from '../../features/CartReducer';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const cartValue = useSelector((item) => item.initialCart.value);
+  const navigate = useNavigate();
 
   function totalAmount() {
     let total = 0;
@@ -37,6 +39,7 @@ const Cart = () => {
                         alt={item.rname}
                         width='80px'
                         height='60px'
+                        onClick={() => navigate(`/cart/${item.id}`)}
                       />
                     </td>
                     <td
