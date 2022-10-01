@@ -4,7 +4,7 @@ import Cards from '../components/Cards/Cards';
 import Cart from '../components/Cart/Cart';
 import UserAuth from '../components/UserAuthentication/UserAuth';
 
-const routes = () => {
+const RouteFile = () => {
   return (
     <>
       <BrowserRouter>
@@ -18,4 +18,4 @@ const routes = () => {
   );
 };
 
-export default routes;
+export default RouteFile;
