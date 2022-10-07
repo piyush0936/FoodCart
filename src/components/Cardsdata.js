@@ -1,7 +1,7 @@
 const cardsData = [
   {
     id: 1,
-    rname: 'Chocolate Cake',
+    rname: 'Cake',
     imgdata: require('../images/cake.jpg'),
     recommendedDishes: 'Burger, Pastry',
     somedata: ' 1175 + order placed from here recently',
