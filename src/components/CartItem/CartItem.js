@@ -55,8 +55,8 @@ const CartItem = () => {
               </div>
 
               <div className='SubCardHeading'>
-                <strong>Dishes : </strong>
-                {cartDetails[0]?.address}
+                <strong>You May Like : </strong>
+                {cartDetails[0]?.recommendedDishes}
               </div>
 
               <div className='SubCardHeading'>

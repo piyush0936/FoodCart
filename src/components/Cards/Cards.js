@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Cardsdata from '../Cardsdata';
+import cardsData from '../Cardsdata';
 import './Cards.css';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -29,7 +29,7 @@ const Cards = () => {
       </div>
 
       <div className='AllCards'>
-        {Cardsdata.map((element) => {
+        {cardsData.map((element) => {
           return (
             <>
               <div key={element.id} className='SubCard'>

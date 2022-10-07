@@ -1,4 +1,3 @@
-import { Alert } from '@mui/material';
 import { createSlice } from '@reduxjs/toolkit';
 
 const userAuthSlice = createSlice({

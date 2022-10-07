@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
 import { isLogin } from '../../features/UserAuthReducer';
 import { useNavigate } from 'react-router-dom';
-import { Alert } from '@mui/material';
 
 const UserAuth = () => {
   const [userID, setUserID] = useState('');
@@ -25,9 +24,6 @@ const UserAuth = () => {
 
   return (
     <>
-      {/* {!isLoginSuccess && (
-        <Alert severity='error'>This is an error alert — check it out!</Alert>
-      )} */}
       <div className='InputForm'>
         <Card className='CardDetails'>
           <CardContent>
@@ -47,7 +43,7 @@ const UserAuth = () => {
             />
           </CardContent>
           <CardActions sx={{ justifyContent: 'center' }}>
-            <Button
+            {/* <Button
               variant='contained'
               disabled={!userID.length || !password.length}
               onClick={() => {
@@ -55,7 +51,7 @@ const UserAuth = () => {
               }}
             >
               Submit
-            </Button>
+            </Button> */}
             <Button
               variant='contained'
               onClick={() => {
