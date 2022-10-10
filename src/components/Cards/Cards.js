@@ -33,12 +33,13 @@ const Cards = () => {
           return (
             <>
               <div key={element.id} className='SubCard'>
-                <Card sx={{ width: '350px', border: '1px solid #2c20ab' }}>
+                <Card sx={{ width: '258px', borderRadius: '20px' }}>
                   <CardMedia
                     component='img'
-                    height='140'
+                    height='250'
                     image={element.imgdata}
                     alt={element.rname}
+                    loading='lazy'
                   />
                   <CardContent>
                     <Typography variant='h5'>{element.rname}</Typography>

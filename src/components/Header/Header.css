@@ -16,6 +16,7 @@
   display: flex;
   list-style-type: none;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .HeaderLeft li {
@@ -24,7 +25,7 @@
 
 .HeaderLeft li:hover {
   transition: transform 0.2s;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .HeaderLeft li:last-child {
@@ -59,4 +60,18 @@
   right: 10px;
   position: absolute;
   cursor: pointer;
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .HeaderLeft li:last-child {
+    padding-right: 0px;
+  }
+
+  .HeaderLeft li {
+    padding: 10px;
+  }
+
+  .HeaderSubLeft {
+    padding-left: 10px;
+  }
 }

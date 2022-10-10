@@ -1,6 +1,25 @@
-.InputForm {
-  height: 90vh;
+.UserAuth {
+  background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+}
+
+.UserAuthHeading {
+  text-align: left;
+  font-size: 2rem;
+  color: yellow;
+  padding-bottom: 10px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+}
+
+.InputForm {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

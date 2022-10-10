@@ -5,3 +5,10 @@
 .Pointer {
   cursor: pointer;
 }
+
+.ImageDetail {
+  display: flex;
+  font-size: 14px;
+  padding-right: 8px;
+  padding-top: 10px;
+}

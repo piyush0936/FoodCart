@@ -31,7 +31,7 @@ const CartItem = () => {
         <Card sx={{ width: '80%', border: '1px solid #2c20ab' }}>
           <CardMedia
             component='img'
-            height='140'
+            height='230'
             image={cartDetails[0]?.imgdata}
             alt={cartDetails[0]?.rname}
           />

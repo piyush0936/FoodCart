@@ -23,8 +23,9 @@ const UserAuth = () => {
   }, [isLoginSuccess]);
 
   return (
-    <>
+    <div className='UserAuth'>
       <div className='InputForm'>
+        <div className='UserAuthHeading'>Hungry?</div>
         <Card className='CardDetails'>
           <CardContent>
             <Typography variant='h6'>Enter UserID</Typography>
@@ -69,7 +70,7 @@ const UserAuth = () => {
           </CardActions>
         </Card>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -71,6 +71,10 @@ const Cart = () => {
           </tfoot>
         </table>
       </div>
+      <div className='ImageDetail'>
+        <sup>#</sup>
+        <p>Click on Image to view Cart Item in detail</p>
+      </div>
     </>
   );
 };
